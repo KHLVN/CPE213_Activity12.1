@@ -41,7 +41,7 @@
      - name: Add sudoer rule for local user
        copy:
          dest: /etc/sudoers.d/admin
-         src: etc/sudoers.d/admin
+         src: files/etc/sudoers.d/admin
          owner: root
          group: root
          mode: 0440
@@ -51,7 +51,7 @@
      - name: Add hardened SSH config
        copy:
          dest: /etc/ssh/sshd_config
-         src: etc/ssh/sshd_config
+         src: files/etc/ssh/sshd_config
          owner: root
          group: root
          mode: 0600
@@ -98,7 +98,7 @@
      - name: Set a message of the day
        copy:
          dest: /etc/motd
-         src: etc/motd
+         src: files/etc/motd
          owner: root
          group: root
          mode: 0644
@@ -106,7 +106,7 @@
      - name: Set a login banner
        copy:
          dest: "{{ item }}"
-         src: etc/issue
+         src: files/etc/issue
          owner: root
          group: root
          mode: 0644
